@@ -9,12 +9,13 @@
             <h1><a href="/">Ivan's blog</a></h1>
         </div>
 
+        {% for post in posts %}
         <div>
-            <br>
-            <p>Published 26 Oct. 2022, 17:10</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Путь в тысячу шагов начинается с одного шага</p>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
+        {% endfor %}
 
         <div>
             <br>
